@@ -142,7 +142,10 @@ onMounted(() => {
               variant="outlined"
               density="compact"
               :rules="[rules.required, rules.length(MAX_LENGTH)]"
+              :type="item.showPassword ? 'text' : 'password'"
+              :append-inner-icon="item.showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               @blur="updateAcc(item)"
+              @click:appendInner="item.showPassword = !item.showPassword"
             ></v-text-field>
           </td>
           <td>

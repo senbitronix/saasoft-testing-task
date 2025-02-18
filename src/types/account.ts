@@ -4,6 +4,7 @@ export type TAccount = {
   login: string
   type: EAccountType
   password: string | null
+  showPassword: boolean
 }
 export type TAccountStored = Omit<TAccount, 'label'> & {
   label: TLabel[]
