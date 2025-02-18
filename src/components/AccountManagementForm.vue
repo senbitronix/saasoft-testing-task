@@ -91,7 +91,7 @@ onMounted(() => {
       <thead>
         <tr>
           <th class="text-left">Метки</th>
-          <th class="text-left">Тип задачи</th>
+          <th class="text-left">Тип записи</th>
           <th class="text-left">Логин</th>
           <th class="text-left">Пароль</th>
           <th class="text-left"></th>
