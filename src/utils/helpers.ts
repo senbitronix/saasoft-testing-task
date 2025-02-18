@@ -1,4 +1,6 @@
-export function stringToLabelArray(inputString: string | undefined | null): { text: string }[] {
+import type { TLabel } from '@/types/account'
+
+export function stringToLabelArray(inputString: string | undefined | null): TLabel[] {
   if (!inputString) {
     return []
   }
@@ -8,7 +10,7 @@ export function stringToLabelArray(inputString: string | undefined | null): { te
   return result
 }
 
-export function labelArrayToString(labelArray: { text: string }[]): string {
+export function labelArrayToString(labelArray: TLabel[]): string {
   if (!labelArray || labelArray.length === 0) {
     return ''
   }
