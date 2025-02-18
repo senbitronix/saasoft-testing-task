@@ -15,15 +15,7 @@ export const useAccountStore = defineStore('accounts', () => {
     },
   ] as const
 
-  const accounts = ref<TAccountStored[]>([
-    {
-      id: Date.now(),
-      label: [{ text: 'Froz' }],
-      type: EAccountType.LOCAL,
-      login: 'Qwerty',
-      password: '12345',
-    },
-  ])
+  const accounts = ref<TAccountStored[]>([])
 
   accounts.value = loadFromCache()
 

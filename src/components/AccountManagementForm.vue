@@ -28,6 +28,7 @@ function updateAcc(acc: TAccount) {
       } else {
         acc.id = Date.now()
         createAccount({ ...acc })
+        notificationsStore.add('Учетная запись создана')
       }
     }
   })
