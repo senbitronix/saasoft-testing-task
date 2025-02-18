@@ -13,7 +13,7 @@ export function labelArrayToString(labelArray: { text: string }[]): string {
     return ''
   }
 
-  const labels = labelArray.map((label) => label.text.trim()) // trim() здесь
+  const labels = labelArray.map((label) => label.text.trim())
   const result = labels.join(';')
   return result
 }

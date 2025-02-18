@@ -1,20 +1,10 @@
-interface TAccountBase {
-  id: number
+export type TAccount = {
+  id?: number
   label: string
   login: string
+  type: EAccountType
+  password: string | null
 }
-
-interface TAccountLocal extends TAccountBase {
-  type: EAccountType.LOCAL
-  password: string
-}
-
-interface TAccountLdap extends TAccountBase {
-  type: EAccountType.LDAP
-  password: null
-}
-
-export type TAccount = TAccountLocal | TAccountLdap
 export type TAccountStored = Omit<TAccount, 'label'> & {
   label: TLabel[]
 }

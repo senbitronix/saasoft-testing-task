@@ -34,13 +34,11 @@ export const useAccountStore = defineStore('accounts', () => {
   }
 
   function createAccount(acc: TAccount) {
-    console.log('createAccount')
     accounts.value.push({ ...acc, label: stringToLabelArray(acc.label) })
     saveInCache(accounts.value)
   }
 
   function updateAccount(acc: TAccount) {
-    console.log('updateAccount')
     const idx = accounts.value.findIndex((account) => account.id === acc.id)
     accounts.value.splice(idx, 1, { ...acc, label: stringToLabelArray(acc.label) })
     saveInCache(accounts.value)
