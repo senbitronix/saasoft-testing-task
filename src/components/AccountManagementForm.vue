@@ -3,14 +3,22 @@ import { useAccountStore } from '@/stores/accounts'
 import { nextTick, onMounted, ref } from 'vue'
 import { EAccountType, type TAccount } from '@/types/account'
 import { labelArrayToString } from '@/utils/helpers'
+import { useNotificationsStore } from '@/stores/notifications'
 
 const MAX_LABEL_LENGTH = 50
 const MAX_LENGTH = 100
 
 const { accounts, deleteAccount, types, createAccount, updateAccount } = useAccountStore()
+const notificationsStore = useNotificationsStore()
+
 const accountsCopy = ref<TAccount[]>([])
 const form = ref()
 const isValid = ref()
+
+const rules = ref({
+  required: (v: string) => !!v || 'Обязательно к заполнению',
+  length: (len: number) => (v: string) => (v || '').length <= len || `Максимум ${len} символов`,
+})
 
 function updateAcc(acc: TAccount) {
   nextTick(() => {
@@ -33,13 +41,9 @@ function removePassword(acc: TAccount) {
   updateAcc(acc)
 }
 
-const rules = ref({
-  required: (v: string) => !!v || 'Обязательно к заполнению',
-  length: (len: number) => (v: string) => (v || '').length <= len || `Максимум ${len} символов`,
-})
-
 function addAccount() {
   if (accountsCopy.value.find((account) => !account.id)) {
+    notificationsStore.add('Необходимо заполнить пустую учетную запись')
     return
   }
   const newAcc = { label: '' } as TAccount

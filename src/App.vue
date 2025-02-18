@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AccountManagementForm from './components/AccountManagementForm.vue'
+import NotificationMessage from './components/NotificationMessage.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import AccountManagementForm from './components/AccountManagementForm.vue'
       <AccountManagementForm />
     </div>
   </main>
+  <NotificationMessage />
 </template>
 
 <style scoped>
