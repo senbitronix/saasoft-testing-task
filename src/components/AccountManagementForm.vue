@@ -85,8 +85,6 @@ onMounted(() => {
   >
     Для указания нескольких меток для одной пары логин/пароль используйте разделитель ;
   </v-alert>
-  <div>acc: {{ accounts }}</div>
-  <div>accCopy: {{ accountsCopy }}</div>
 
   <v-form v-if="accountsCopy.length" v-model="isValid" ref="form">
     <v-table class="accounts-table">
