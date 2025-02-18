@@ -4,8 +4,8 @@ import { nextTick, onMounted, ref } from 'vue'
 import { EAccountType, type TAccount } from '@/types/account'
 import { labelArrayToString } from '@/utils/helpers'
 
-const MAX_LABEL_LENGTH = 20
-const MAX_LENGTH = 10
+const MAX_LABEL_LENGTH = 50
+const MAX_LENGTH = 100
 
 const { accounts, deleteAccount, types, createAccount, updateAccount } = useAccountStore()
 const accountsCopy = ref<TAccount[]>([])
