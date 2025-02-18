@@ -162,7 +162,7 @@ onMounted(() => {
       </tbody>
     </v-table>
   </v-form>
-  <div class="text-center mt-10" v-else>Аккаунты не найдены</div>
+  <div class="text-center mt-10" v-else>Учетные записи не найдены</div>
 </template>
 
 <style scoped>
